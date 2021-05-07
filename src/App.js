@@ -18,9 +18,13 @@ function App() {
           <Route exact path="/about" component={AboutPage}></Route>
           <Route
             exact
-            path="/user/:username"
-            render={({match}) => {
-              return <h1>Welcome {match.params.username}</h1>;
+            path="/user/:firstname/:lastname"
+            render={({ match }) => {
+              return (
+                <h1>
+                  Welcome {match.params.firstname} {match.params.lastname}
+                </h1>
+              );
             }}
           ></Route>
         </header>
