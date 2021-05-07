@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route, Link, NavLink } from "react-router-dom";
 import AboutPage from "./pages/AboutPage";
 import "./App.css";
 
@@ -10,14 +10,36 @@ function App() {
         <header className="App-header">
           <ul>
             <li>
-              <Link className="App-link" to="/">
+              <NavLink
+                className="App-link"
+                to="/"
+                exact
+                activeClassName="Link-active-style"
+              >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className="App-link" to="/about">
+              <NavLink
+                className="App-link"
+                to="/about"
+                exact
+                activeClassName="Link-active-style"
+              >
                 About Page
-              </Link>
+              </NavLink>
+              
+            </li>
+            <li>
+              <NavLink
+                className="App-link"
+                to="/user/john/doe"
+                exact
+                activeClassName="Link-active-style"
+              >
+       User John Doe
+              </NavLink>
+              
             </li>
           </ul>
           <Route
