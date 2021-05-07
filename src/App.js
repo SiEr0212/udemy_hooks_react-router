@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import AboutPage from "./pages/AboutPage";
 import "./App.css";
 
@@ -8,6 +8,18 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <header className="App-header">
+          <ul>
+            <li>
+              <Link className="App-link" to="/">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link className="App-link" to="/about">
+                About Page
+              </Link>
+            </li>
+          </ul>
           <Route
             exact
             path="/"
