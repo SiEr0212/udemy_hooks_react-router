@@ -58,6 +58,10 @@ function App() {
               </NavLink>
             </li>
           </ul>
+<Prompt when={loggedIn && !age} message={(location) =>{
+return location.pathname.startsWith('/user') ? true : "Are you sure?"
+}}></Prompt>
+
           <button className="button" onClick={onClickHandle}>
             {loggedIn ? "logout" : "login"}
           </button>
