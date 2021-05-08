@@ -5,6 +5,7 @@ import {
   Link,
   NavLink,
   Redirect,
+  Prompt,
 } from "react-router-dom";
 import AboutPage from "./pages/AboutPage";
 import { useState } from "react";
@@ -12,17 +13,21 @@ import "./App.css";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [age, setAge] = useState(null);
 
   const onClickHandle = () => {
     setLoggedIn(!loggedIn);
+  };
+  const onChangeHandle = (e) => {
+    setAge(e.target.value);
   };
 
   return (
     <BrowserRouter>
       <div className="App">
         <header className="App-header">
-          <ul>
-            <li>
+          <ul className="ul-style">
+            <li className="li-style">
               <NavLink
                 className="App-link"
                 to="/"
@@ -32,7 +37,7 @@ function App() {
                 Home
               </NavLink>
             </li>
-            <li>
+            <li className="li-style">
               <NavLink
                 className="App-link"
                 to="/about"
@@ -42,7 +47,7 @@ function App() {
                 About Page
               </NavLink>
             </li>
-            <li>
+            <li className="li-style">
               <NavLink
                 className="App-link"
                 to="/user/john/doe"
@@ -53,7 +58,7 @@ function App() {
               </NavLink>
             </li>
           </ul>
-          <button onClick={onClickHandle}>
+          <button className="button" onClick={onClickHandle}>
             {loggedIn ? "logout" : "login"}
           </button>
           <Route
@@ -70,6 +75,12 @@ function App() {
             render={({ match }) => {
               return loggedIn ? (
                 <h1>
+                <h2>Age: {age}</h2>
+                  <input
+                    type="text"
+                    value={age}
+                    onChange={onChangeHandle}
+                  ></input>
                   Welcome {match.params.firstname} {match.params.lastname}
                 </h1>
               ) : (
