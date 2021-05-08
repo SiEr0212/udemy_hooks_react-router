@@ -53,8 +53,9 @@ function App() {
               </NavLink>
             </li>
           </ul>
-          {loggedIn.toString()}
-          <button onClick={onClickHandle}>login</button>
+          <button onClick={onClickHandle}>
+            {loggedIn ? "logout" : "login"}
+          </button>
           <Route
             exact
             path="/"
