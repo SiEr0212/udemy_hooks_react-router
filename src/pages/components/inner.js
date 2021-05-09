@@ -6,7 +6,7 @@ export default function Inner() {
   return (
     <>
       <h3>Inner:</h3>
-      <button className="button"  onClick={() => {setMessage(Math.random().toString())}}></button>
+      <button className="button"  onClick={() => {setMessage(Math.random().toString())}}>Change Message</button>
     </>
   );
 }
