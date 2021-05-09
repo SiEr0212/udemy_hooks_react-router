@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import AboutPage from "./pages/AboutPage";
 import { useState } from "react";
+import messageContext from "./contexts/messageContext";
 import "./App.css";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <messageContext.Provider value="I am being shared">
       <div className="App">
         <header className="App-header">
           <ul className="ul-style">
@@ -99,6 +101,7 @@ function App() {
           ></Route>
         </header>
       </div>
+      </messageContext.Provider>
     </BrowserRouter>
   );
 }
