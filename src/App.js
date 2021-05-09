@@ -11,6 +11,7 @@ import AboutPage from "./pages/AboutPage";
 import { useState } from "react";
 import messageContext from "./contexts/messageContext";
 import "./App.css";
+import HomePage from "./pages/HomePage";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -75,9 +76,7 @@ function App() {
           <Route
             exact
             path="/"
-            render={() => {
-              return <h1>Welcome Home</h1>;
-            }}
+            component={HomePage}
           ></Route>
           <Route exact path="/about" component={AboutPage}></Route>
           <Route
