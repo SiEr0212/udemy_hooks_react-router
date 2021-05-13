@@ -78,7 +78,7 @@ function App() {
             <Route exact path="/about" component={AboutPage}></Route>
             <Route
               exact
-              path="/user/:firstname/:lastname"
+              path="/user/:firstname/:lastnam"
               render={({ match }) => {
                 return loggedIn ? (
                   <h1>
