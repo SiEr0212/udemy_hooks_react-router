@@ -47,7 +47,7 @@
   flex-direction: row;
 }
 .li-style {
-  width: 300px;
+  width: 200px;
   list-style-type: none;
   border: 1px solid grey;
   padding: 5px;
